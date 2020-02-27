@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/styles/User.scss";
 
 const User = () => {
-  const [isLogin, setIslogin] = React.useState(true);
+  const [isLogin, setIslogin] = useState(true);
 
   const signUp = e => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const User = () => {
       <div className="full-width">
         <div className="small-con">
           <div className="user-content">
-            <i class="fa fas fa-user-circle fa-5x"></i>
+            <i className="fa fas fa-user-circle fa-5x"></i>
             <form>
               <h6>Email:</h6>
               <input className="user-content__input" type="text"></input>

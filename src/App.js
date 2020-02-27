@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import User from "./components/User";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
 
@@ -56,11 +58,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Route path="/user">
+    <div>
+      <Header />
+      {/* <Route path="/user">
         <User />
-      </Route>
-    </BrowserRouter>
+      </Route> */}
+      <Footer />
+    </div>
   );
 };
 

@@ -1,0 +1,41 @@
+@import "../styles/mixins/mixinsFooter";
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: black;
+  &__brand {
+    grid-column: 2/6;
+    @include fontfooter;
+    img {
+      margin-top: 3vh;
+    }
+  }
+  &__link {
+    grid-column: 6/8;
+    @include fontfooter;
+    list-style-type: none;
+    margin-top: 3vh;
+  }
+  &__media {
+    grid-column: 8/12;
+    @include fontfooter;
+    margin-top: 3vh;
+  }
+  h5 {
+    margin-bottom: 2vh;
+  }
+  &--playstore {
+    width: 6vw;
+    height: 10vh;
+    margin-right: 0.5vw;
+    margin-left: -0.5vw;
+  }
+  &--appstore {
+    width: 6vw;
+    height: 10vh;
+  }
+  &__social-media {
+    margin-right: 0.5vw;
+  }
+}
