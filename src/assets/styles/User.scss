@@ -1,0 +1,81 @@
+@import "../styles/mixins/mixinsUser";
+
+.full-width {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+}
+
+.small-con {
+  width: 25vw;
+  height: 65vh;
+  background-color: white;
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 20%;
+  .user-content {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    &__input {
+      width: 20.5vw;
+      height: 3.5vh;
+      border: none;
+      margin-top: -0.3vh;
+      padding-left: 1rem;
+      background-color: #ece7e7;
+    }
+    &__btn {
+      @include userfont;
+      @include userbtn;
+      margin-top: 4vh;
+      margin-left: 4vw;
+      margin-right: 4vw;
+    }
+
+    &__btn:hover {
+      background-color: #f37097;
+    }
+    &__btnin {
+      @include userfont;
+      @include userbtn;
+      margin-top: 10vh;
+      margin-left: 4vw;
+      margin-right: 4vw;
+    }
+
+    &__btnin:hover {
+      background-color: #f37097;
+    }
+
+    .fa {
+      margin-left: 8vw;
+      margin-top: 4vh;
+      margin-bottom: 3vh;
+      color: #fe024e;
+    }
+    h6 {
+      margin-bottom: 1vh;
+      margin-top: 1.5vh;
+      @include userfont;
+    }
+    p {
+      margin-bottom: 1vh;
+      margin-top: 1.8vh;
+      margin-left: 3vw;
+      @include userfont;
+    }
+    a {
+      @include userfont;
+      text-decoration: none;
+      color: #fe024e;
+      cursor: pointer;
+    }
+    a:hover {
+      @include userfont;
+      text-decoration: none;
+      color: #f37097;
+    }
+  }
+}

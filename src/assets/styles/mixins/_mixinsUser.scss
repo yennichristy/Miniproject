@@ -1,0 +1,17 @@
+@mixin userfont {
+  font-family: "Helvetica";
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+@mixin userbtn {
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.8rem;
+  width: 12vw;
+  border-radius: 3rem;
+  background-color: #fe024e;
+  cursor: pointer;
+  color: white;
+}
