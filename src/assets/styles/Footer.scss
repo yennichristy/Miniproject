@@ -1,41 +1,58 @@
 @import "../styles/mixins/mixinsFooter";
 
 .footer {
+  width: 100vw;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   background-color: black;
   &__brand {
-    grid-column: 2/6;
+    border-bottom: 1px solid white;
+    grid-column: 2/5;
     @include fontfooter;
-    img {
-      margin-top: 3vh;
+    margin-top: 4vh;
+    &__logo {
+      display: flex;
+      justify-content: flex-start;
+      h4 {
+        margin-top: 1vh;
+        margin-left: 1vw;
+        margin-bottom: 2vh;
+        @include fontfooter;
+        font-size: 3rem;
+      }
     }
   }
   &__link {
-    grid-column: 6/8;
+    border-bottom: 1px solid white;
+    grid-column: 5/8;
     @include fontfooter;
     list-style-type: none;
     margin-top: 3vh;
+    li {
+      margin-left: 5vw;
+    }
   }
   &__media {
+    border-bottom: 1px solid white;
     grid-column: 8/12;
     @include fontfooter;
     margin-top: 3vh;
+    &__store {
+      width: 8rem;
+      height: 4rem;
+    }
+    &__social-media {
+      margin-right: 0.5vw;
+    }
   }
   h5 {
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
   }
-  &--playstore {
-    width: 6vw;
-    height: 10vh;
-    margin-right: 0.5vw;
-    margin-left: -0.5vw;
-  }
-  &--appstore {
-    width: 6vw;
-    height: 10vh;
-  }
-  &__social-media {
-    margin-right: 0.5vw;
-  }
+}
+.copyright {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  @include fontfooter;
 }
