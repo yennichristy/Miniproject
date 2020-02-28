@@ -1,4 +1,4 @@
-@import "../styles/mixins/mixinsFooter";
+@import "../styles/mixins/mixinsLayout";
 
 .footer {
   width: 100vw;
@@ -8,7 +8,7 @@
   &__brand {
     border-bottom: 1px solid white;
     grid-column: 2/5;
-    @include fontfooter;
+    @include fontlayout;
     margin-top: 4vh;
     &__logo {
       display: flex;
@@ -17,15 +17,14 @@
         margin-top: 1vh;
         margin-left: 1vw;
         margin-bottom: 2vh;
-        @include fontfooter;
-        font-size: 3rem;
+        @include fontlogo;
       }
     }
   }
   &__link {
     border-bottom: 1px solid white;
     grid-column: 5/8;
-    @include fontfooter;
+    @include fontlayout;
     list-style-type: none;
     margin-top: 3vh;
     li {
@@ -35,7 +34,7 @@
   &__media {
     border-bottom: 1px solid white;
     grid-column: 8/12;
-    @include fontfooter;
+    @include fontlayout;
     margin-top: 3vh;
     &__store {
       width: 8rem;
@@ -54,5 +53,5 @@
   display: flex;
   justify-content: center;
   background-color: black;
-  @include fontfooter;
+  @include fontlayout;
 }

@@ -1,14 +1,46 @@
+@import "../styles/mixins/mixinsLayout";
+@import "../styles/mixins/mixinsUser";
+
 .header {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   background-color: white;
+  width: 100vw;
   &__brand {
     grid-column: 2/5;
+    margin-bottom: -2.5vh;
+    margin-top: -2.5vh;
+    &__container {
+      display: flex;
+      h4 {
+        font-size: 3.5vh;
+        margin-left: 1vw;
+      }
+    }
   }
   &__search {
-    grid-column: 5/9;
+    grid-column: 5/10;
+    &__input {
+      height: 4vh;
+      width: 35vw;
+      margin-top: 2vh;
+      padding-left: 0.7vw;
+    }
   }
   &__user {
-    grid-column: 9/12;
+    grid-column: 11/12;
+    margin-top: 2.5vh;
+    &__btn {
+      border: none;
+      @include userfont;
+      font-size: 2.5vh;
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      background-color: white;
+    }
+    &__btn:hover {
+      color: #fe024e;
+    }
   }
 }
