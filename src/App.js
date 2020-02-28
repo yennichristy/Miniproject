@@ -60,9 +60,9 @@ const App = () => {
   return (
     <div>
       <Header />
-      {/* <Route path="/user">
+      <Route path="/user">
         <User />
-      </Route> */}
+      </Route>
       <Footer />
     </div>
   );

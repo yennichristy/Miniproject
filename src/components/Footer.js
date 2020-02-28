@@ -11,8 +11,10 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__brand">
-        <img src={logo} alt="logo" width="20%" height="20%"></img>
-        <h4>MilanTV</h4>
+        <div>
+          <img src={logo} alt="logo" width="20%" height="20%"></img>
+          <h4>MilanTV</h4>
+        </div>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard.printing and
