@@ -11,7 +11,7 @@ const User = () => {
   if (isLogin) {
     return (
       <div className="full-width">
-        <div className="small-con">
+        <div className="user-page">
           <div className="user-content">
             <i className="fa fas fa-user-circle fa-5x"></i>
             <form>
@@ -20,9 +20,12 @@ const User = () => {
               <h6>Password:</h6>
               <input className="user-content__input" type="text"></input>
             </form>
-            <button className="user-content__btnin">Sign In</button>
+            <button className="user-content__btn__main">Sign In</button>
             <p>
-              Don't have any account? <a onClick={signUp}>Sign up here</a>
+              Don't have any account?{" "}
+              <button className="user-content__btn__switch" onClick={signUp}>
+                Sign up here
+              </button>
             </p>
           </div>
         </div>
@@ -31,7 +34,7 @@ const User = () => {
   } else {
     return (
       <div className="full-width">
-        <div className="small-con">
+        <div className="user-page">
           <div className="user-content">
             <i class="fa fas fa-user-circle fa-5x"></i>
             <form>
@@ -46,7 +49,10 @@ const User = () => {
             </form>
             <button className="user-content__btn">Sign Up</button>
             <p>
-              Already have account? <a href="/user">Log in here</a>
+              Already have account?{" "}
+              <a className="user-content__btn__switch" href="/user">
+                Log in here
+              </a>
             </p>
           </div>
         </div>

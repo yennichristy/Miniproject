@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.small-con {
+.user-page {
   width: 25vw;
   height: 65vh;
   background-color: white;
@@ -32,20 +32,32 @@
       margin-top: 4vh;
       margin-left: 4vw;
       margin-right: 4vw;
+      &__switch {
+        background-color: white;
+        border: none;
+        @include userfont;
+        text-decoration: none;
+        color: #fe024e;
+        cursor: pointer;
+      }
+      &__switch:hover {
+        @include userfont;
+        text-decoration: none;
+        color: #f37097;
+      }
+      &__main {
+        @include userfont;
+        @include userbtn;
+        margin-top: 10vh;
+        margin-left: 4vw;
+        margin-right: 4vw;
+      }
+      &__main:hover {
+        background-color: #f37097;
+      }
     }
 
     &__btn:hover {
-      background-color: #f37097;
-    }
-    &__btnin {
-      @include userfont;
-      @include userbtn;
-      margin-top: 10vh;
-      margin-left: 4vw;
-      margin-right: 4vw;
-    }
-
-    &__btnin:hover {
       background-color: #f37097;
     }
 
@@ -65,17 +77,6 @@
       margin-top: 1.8vh;
       margin-left: 3vw;
       @include userfont;
-    }
-    a {
-      @include userfont;
-      text-decoration: none;
-      color: #fe024e;
-      cursor: pointer;
-    }
-    a:hover {
-      @include userfont;
-      text-decoration: none;
-      color: #f37097;
     }
   }
 }
