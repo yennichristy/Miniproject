@@ -1,0 +1,25 @@
+@mixin content {
+  font-family: "Helvetica";
+  font-size: 1.18rem;
+  color: black;
+}
+
+@mixin title {
+  font-family: "Helvetica";
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px rgb(192, 189, 189);
+  color: black;
+}
+@mixin button {
+  font-size: 1.8vh;
+  font-weight: 600;
+  border: none;
+  padding: 0.8vw;
+  width: 9vw;
+  border-radius: 2vw;
+  background-color: #eb507f;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1), 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}

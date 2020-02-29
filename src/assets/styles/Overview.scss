@@ -1,0 +1,29 @@
+@import "../styles/mixins/mixinsRegular";
+
+.overview {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  &__synopsis {
+    grid-column: 2/12;
+    &--title {
+      @include title;
+      margin-bottom: -2vh;
+    }
+    &--content {
+      @include content;
+      border-top: 0.2vh solid rgb(187, 184, 184);
+    }
+  }
+  &__movie-info {
+    grid-column: 2/12;
+    margin-bottom: 1.8vh;
+    &--title {
+      @include title;
+      margin-bottom: -2vh;
+    }
+    &--content {
+      @include content;
+      border-top: 0.2vh solid rgb(187, 184, 184);
+    }
+  }
+}
