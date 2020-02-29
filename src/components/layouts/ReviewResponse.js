@@ -3,7 +3,7 @@ import BeautyStars from "beauty-stars";
 import "../../assets/styles/ReviewResponse.scss";
 import Profile from "../../assets/pictures/profile.jpeg";
 
-const Review = () => {
+const Response = () => {
   const [rating, setRating] = useState({ value: 0 });
 
   return (
@@ -29,4 +29,4 @@ const Review = () => {
   );
 };
 
-export default Review;
+export default Response;

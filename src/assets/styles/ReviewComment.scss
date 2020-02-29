@@ -1,0 +1,34 @@
+@import "./mixins/mixinsRegular";
+
+.comment {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 7vh;
+  margin-bottom: 3vh;
+  &__img {
+    grid-column: 2/3;
+    img {
+      border: none;
+      border-radius: 3vh;
+    }
+  }
+  &__text {
+    grid-column: 3/12;
+    @include content;
+    margin-left: -3vw;
+    margin-top: -2vh;
+    margin-bottom: 3vh;
+    border-bottom: 0.3vh solid rgb(206, 204, 204);
+    &--bold {
+      font-weight: 600;
+      margin-bottom: -1.5vh;
+    }
+  }
+  &__loadmore {
+    grid-column: 6/8;
+    button {
+      @include submit;
+      width: 7vw;
+    }
+  }
+}
