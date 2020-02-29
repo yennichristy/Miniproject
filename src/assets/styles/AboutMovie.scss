@@ -1,0 +1,19 @@
+@import "../styles/mixins/mixinsUser";
+
+.about-movie {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  &__btn {
+    grid-column: 2/9;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    button {
+      @include userbtn;
+      background-color: #eb507f;
+      width: 7vw;
+      margin-right: 1vw;
+      box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1),
+        0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+}
