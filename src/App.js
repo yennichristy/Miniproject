@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import User from "./components/User";
+import User from "./components/pages/User";
 import { Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Footer from "./components/layouts/Footer";
+import Header from "./components/layouts/Header";
+import Slider from "./components/layouts/Slider";
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
 
@@ -60,6 +61,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <Slider />
       <Route path="/user">
         <User />
       </Route>

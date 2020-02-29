@@ -1,11 +1,11 @@
 import React from "react";
-import logo from "../assets/pictures/logo.svg";
-import pstore from "../assets/pictures/playstore.png";
-import astore from "../assets/pictures/applestore.svg";
-import fb from "../assets/pictures/fb.svg";
-import pin from "../assets/pictures/pinterest.png";
-import ig from "../assets/pictures/ig.png";
-import "../assets/styles/Footer.scss";
+import logo from "../../assets/pictures/logo.svg";
+import pstore from "../../assets/pictures/playstore.png";
+import astore from "../../assets/pictures/applestore.svg";
+import fb from "../../assets/pictures/fb.svg";
+import pin from "../../assets/pictures/pinterest.png";
+import ig from "../../assets/pictures/ig.png";
+import "../../assets/styles/Footer.scss";
 
 const Footer = () => {
   return (

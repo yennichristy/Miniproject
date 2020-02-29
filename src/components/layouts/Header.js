@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../assets/styles/Header.scss";
-import logo from "../assets/pictures/logo.svg";
+import "../../assets/styles/Header.scss";
+import logo from "../../assets/pictures/logo.svg";
 
 const Header = () => {
   const [headerLogin, setHeaderLogin] = useState(true);
@@ -49,7 +49,9 @@ const Header = () => {
           ></input>
         </div>
         <div className="header__user">
-          <button className="header__user__btn">Sign Up</button>
+          <button className="header__user__btn" onClick={logIn}>
+            Sign Up
+          </button>
         </div>
       </div>
     );

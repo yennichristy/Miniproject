@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/styles/User.scss";
+import "../../assets/styles/User.scss";
 
 const User = () => {
   const [isLogin, setIslogin] = useState(true);
