@@ -7,8 +7,8 @@ import Header from "./components/layouts/Header";
 import Slider from "./components/layouts/Slider";
 import AboutMovie from "./components/layouts/AboutMovie";
 // import Overview from "./components/pages/Overview";
-import ReviewResponse from "./components/layouts/ReviewResponse";
-import ReviewComment from "./components/layouts/ReviewComments";
+import Review from "./components/pages/Review";
+import Casts from "./components/pages/Casts";
 
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
@@ -68,8 +68,8 @@ const App = () => {
       <Header />
       <Slider />
       <AboutMovie />
-      <ReviewResponse />
-      <ReviewComment />
+      {/* <Review /> */}
+      <Casts />
       <Route path="/user">
         <User />
       </Route>

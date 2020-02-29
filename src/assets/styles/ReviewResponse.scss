@@ -1,6 +1,6 @@
 @import "../styles/mixins/mixinsRegular";
 
-.review {
+.response {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin-top: 6vh;
@@ -28,7 +28,7 @@
     margin-top: -1.5vh;
     margin-left: -1vh;
   }
-  &__response {
+  &__input {
     grid-column: 3/8;
     margin-left: -3vw;
     textarea {
