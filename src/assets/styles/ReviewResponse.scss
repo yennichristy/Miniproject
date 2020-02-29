@@ -1,0 +1,46 @@
+@import "../styles/mixins/mixinsRegular";
+
+.review {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 6vh;
+  margin-bottom: 3vh;
+  &__img {
+    grid-column: 2/3;
+    img {
+      border: none;
+      border-radius: 3vh;
+    }
+  }
+  &__ratings {
+    grid-column: 3/5;
+    margin-left: -3vw;
+    &__stars {
+      margin-left: 1vh;
+    }
+  }
+  p {
+    @include content;
+    font-weight: 700;
+    margin-top: 1vh;
+  }
+  li {
+    margin-top: -1.5vh;
+    margin-left: -1vh;
+  }
+  &__response {
+    grid-column: 3/8;
+    margin-left: -3vw;
+    textarea {
+      width: 40vw;
+      height: 15vh;
+      padding: 0.5vw;
+      border: 0.3vh solid rgb(206, 204, 204);
+      border-radius: 1.5vh;
+    }
+    button {
+      margin-top: 2vh;
+      @include submit;
+    }
+  }
+}

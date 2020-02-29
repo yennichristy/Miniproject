@@ -3,6 +3,7 @@
 .about-movie {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  margin-top: 2.5vh;
   &__btn {
     grid-column: 2/9;
     margin-top: 1vh;

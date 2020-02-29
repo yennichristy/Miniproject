@@ -6,7 +6,9 @@ import Footer from "./components/layouts/Footer";
 import Header from "./components/layouts/Header";
 import Slider from "./components/layouts/Slider";
 import AboutMovie from "./components/layouts/AboutMovie";
-import Overview from "./components/pages/Overview";
+// import Overview from "./components/pages/Overview";
+import ReviewResponse from "./components/layouts/ReviewResponse";
+
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
 
@@ -65,7 +67,7 @@ const App = () => {
       <Header />
       <Slider />
       <AboutMovie />
-      <Overview />
+      <ReviewResponse />
       <Route path="/user">
         <User />
       </Route>
