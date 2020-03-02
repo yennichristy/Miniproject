@@ -7,8 +7,9 @@ import Header from "./components/layouts/Header";
 import Slider from "./components/layouts/Slider";
 import AboutMovie from "./components/layouts/AboutMovie";
 // import Overview from "./components/pages/Overview";
-import Review from "./components/pages/Review";
+// import Review from "./components/pages/Review";
 import Casts from "./components/pages/Casts";
+import Banner from "./components/layouts/Banner";
 
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
@@ -66,10 +67,11 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Slider />
-      <AboutMovie />
+      <Banner />
+      {/* <Slider /> */}
+      {/* <AboutMovie /> */}
       {/* <Review /> */}
-      <Casts />
+      {/* <Casts /> */}
       <Route path="/user">
         <User />
       </Route>
