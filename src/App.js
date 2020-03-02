@@ -10,6 +10,7 @@ import AboutMovie from "./components/layouts/AboutMovie";
 // import Review from "./components/pages/Review";
 import Casts from "./components/pages/Casts";
 import Banner from "./components/layouts/Banner";
+import Category from "./components/layouts/CategoryButton";
 
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
@@ -67,11 +68,12 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Banner />
-      {/* <Slider /> */}
+      {/* <Banner /> */}
+      <Slider />
       {/* <AboutMovie /> */}
       {/* <Review /> */}
       {/* <Casts /> */}
+      <Category />
       <Route path="/user">
         <User />
       </Route>

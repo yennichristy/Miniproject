@@ -1,0 +1,32 @@
+@import "./mixins/mixinsRegular";
+
+.category {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 1.5git vh;
+  h4 {
+    grid-column: 2/10;
+    color: #8c8989;
+  }
+  &__btn {
+    grid-column: 2/10;
+    button {
+      border: none;
+      background-color: transparent;
+      font-weight: bold;
+      font-size: 1.4vh;
+      color: #8c8989;
+      width: 7vw;
+      padding: 1vh;
+      margin-right: 1vw;
+    }
+    button:hover {
+      @include button;
+      font-weight: bold;
+      font-size: 1.4vh;
+      width: 7vw;
+      padding: 1vh;
+      margin-right: 1vw;
+    }
+  }
+}
