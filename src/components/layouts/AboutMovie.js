@@ -6,7 +6,7 @@ const AboutMovie = () => {
     <div className="about-movie">
       <div className="about-movie__btn">
         <button>Overview</button>
-        <button>Characters</button>
+        <button>Casts</button>
         <button>Review</button>
       </div>
     </div>
