@@ -1,6 +1,5 @@
 const initialState = {
   token: localStorage.getItem("token"),
-  isAuthenticate: false,
   user: null,
   error: null
 };
@@ -9,10 +8,10 @@ const userReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case "SUCCESS":
+      console.log(payload);
       return {
         ...state,
-        token: payload.token,
-        isAuthenticate: true,
+        token: payload,
         user: payload.user
       };
     case "FAILED":

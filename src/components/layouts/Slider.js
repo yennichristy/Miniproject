@@ -12,7 +12,7 @@ const Slide = () => {
     dots: true,
     autoplay: true,
     infinite: true,
-    speed: 100,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1
   };

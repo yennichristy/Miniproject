@@ -13,12 +13,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Route path="/user">
-        <User />
-      </Route>
-      <Route path="/home">
-        <MainPage />
-      </Route>
+      <MainPage />
       <Route path="/overview" exact>
         <OverviewPage />
       </Route>

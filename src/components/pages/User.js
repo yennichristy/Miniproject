@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "../../assets/styles/User.scss";
-import { connect } from "react-redux";
-import { signUp } from "../../store/actions/useraction";
+import { useSelector, useDispatch } from "react-redux";
+import { signUp, signIn } from "../../store/actions/useraction";
 
-const User = ({ signUp }) => {
-  const [isLogin, setIslogin] = useState(true);
+const User = props => {
+  const [isLoginModal, setIsloginModal] = useState(true);
   const [userData, setUserData] = useState({
     name: "",
     email: "",
     password: "",
     confirm: ""
   });
+
+  const user = useSelector(state => state.user);
+  //useDispatch pengganti connect
+  const dispatch = useDispatch();
 
   const change = e => {
     setUserData({
@@ -27,26 +31,50 @@ const User = ({ signUp }) => {
       password: userData.password
     };
     console.log("submit", newUser);
-    signUp(newUser);
+    dispatch(signUp(newUser));
+    props.passingCloseModal();
+  };
+
+  const submitSignIn = e => {
+    e.preventDefault();
+    const userLogIn = {
+      email: userData.email,
+      password: userData.password
+    };
+    dispatch(signIn(userLogIn));
+    props.passingCloseModal();
   };
 
   const changeSignUp = e => {
     e.preventDefault();
-    setIslogin(false);
+    setIsloginModal(!isLoginModal);
   };
-  if (isLogin) {
+  if (isLoginModal) {
     return (
       <div className="full-width">
+        <div className="backdrop" onClick={props.passingCloseModal}></div>
         <div className="user-page">
           <div className="user-content">
             <i className="fa fas fa-user-circle fa-5x"></i>
             <form>
               <h6>Email:</h6>
-              <input className="user-content__input" type="text"></input>
+              <input
+                className="user-content__input"
+                type="text"
+                name="email"
+                onChange={change}
+              ></input>
               <h6>Password:</h6>
-              <input className="user-content__input" type="text"></input>
+              <input
+                className="user-content__input"
+                type="text"
+                name="password"
+                onChange={change}
+              ></input>
             </form>
-            <button className="user-content__btn__main">Sign In</button>
+            <button className="user-content__btn__main" onClick={submitSignIn}>
+              Sign In
+            </button>
             <p>
               Don't have any account?{" "}
               <button
@@ -63,6 +91,7 @@ const User = ({ signUp }) => {
   } else {
     return (
       <div className="full-width">
+        <div className="backdrop" onClick={props.passingCloseModal}></div>
         <div className="user-page">
           <div className="user-content">
             <i class="fa fas fa-user-circle fa-5x"></i>
@@ -109,9 +138,12 @@ const User = ({ signUp }) => {
             </button>
             <p>
               Already have account?{" "}
-              <a className="user-content__btn__switch" href="/user">
-                Log in here
-              </a>
+              <button
+                className="user-content__btn__switch"
+                onClick={changeSignUp}
+              >
+                Sign in here
+              </button>
             </p>
           </div>
         </div>
@@ -120,8 +152,5 @@ const User = ({ signUp }) => {
   }
 };
 
-const mapStateToProps = state => ({
-  user: state.user
-});
-
-export default connect(mapStateToProps, { signUp })(User);
+// export default connect(mapStateToProps, { signUp })(User);
+export default User;

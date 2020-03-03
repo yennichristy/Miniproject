@@ -11,11 +11,13 @@ export const signUp = data => async dispatch => {
       body: JSON.stringify(data)
     });
     const resData = await res.json();
-    localStorage.setItem("token", resData.token);
+    console.log(resData);
+    localStorage.setItem("token", resData.data.token);
     dispatch({
       type: "SUCCESS",
-      payload: res.resData
+      payload: resData
     });
+    alert("Sign Up Success");
   } catch (error) {
     localStorage.removeItem("token");
     dispatch({
@@ -37,14 +39,18 @@ export const signIn = data => async dispatch => {
       body: JSON.stringify(data)
     });
     const resData = await res.json();
-    localStorage.setItem("token", resData.token);
+    console.log(resData);
+    localStorage.setItem("token", resData.data);
     dispatch({
       type: "SUCCESS",
-      payload: res.resData
+      payload: resData
     });
   } catch (error) {
     localStorage.removeItem("token");
-    dispatch({ type: "FAILED" });
+    dispatch({
+      type: "FAILED",
+      payload: error
+    });
     console.log(error);
   }
 };
