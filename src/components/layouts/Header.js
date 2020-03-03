@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "../../assets/styles/Header.scss";
 import logo from "../../assets/pictures/logo.svg";
+import { connect } from "react-redux";
+import { Picture } from "../../assets/pictures/profile.jpeg";
 
-const Header = () => {
+const Header = ({ isAuthenticate }) => {
   const [headerLogin, setHeaderLogin] = useState(true);
 
   const logIn = e => {
@@ -26,9 +28,19 @@ const Header = () => {
           ></input>
         </div>
         <div className="header__user">
-          <button className="header__user__btn" onClick={"/user"}>
-            Sign Up
-          </button>
+          <div className="header__user__btn">
+            {isAuthenticate ? (
+              <div>
+                <img src={Picture} alt="profile"></img>
+              </div>
+            ) : (
+              <div>
+                <button className="header__user__btn" onClick={"/user"}>
+                  Sign Up
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );
@@ -58,4 +70,10 @@ const Header = () => {
   }
 };
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    isAuthenticate: state.user.isAuthenticate
+  };
+};
+
+export default connect(mapStateToProps)(Header);

@@ -7,63 +7,15 @@ import MainPage from "./components/pages/MainPage";
 import OverviewPage from "./components/pages/OverviewPage";
 import ReviewPage from "./components/pages/ReviewPage";
 import CastsPage from "./components/pages/CastsPage";
-
-// import "./App.css";
-// import { getMovies, addMovie, delMovie } from "./store/actions/movie";
-
-// const App = ({ movies, getMovies, addMovie, delMovie }) => {
-//   const [title, setTitle] = React.useState("");
-//   const list = movies.map(item => (
-//     <li key={item.id}>
-//       {item.title}
-//       <button onClick={() => delMovie(item.id)}>delete</button>
-//     </li>
-//   ));
-
-//   const change = e => {
-//     setTitle(e.target.value);
-//   };
-
-//   const submit = e => {
-//     e.preventDefault();
-//     addMovie(title);
-//     setTitle("");
-//   };
-
-//   React.useEffect(() => {
-//     getMovies();
-//   }, [getMovies]);
-
-//   return (
-//     <div className="App">
-//       <h1>Redux with API</h1>
-//       <form onSubmit={submit}>
-//         <input
-//           style={{ width: "50%" }}
-//           value={title}
-//           type="text"
-//           placeholder="title"
-//           onChange={change}
-//         ></input>
-//         <button>add</button>
-//       </form>
-//       {list}
-//     </div>
-//   );
-// };
-
-// const mapStateToProps = state => {
-//   return {
-//     movies: state.movieReducer.movies
-//   };
-// };
-
-// export default connect(mapStateToProps, { getMovies, addMovie, delMovie })(App);
+import User from "./components/pages/User";
 
 const App = () => {
   return (
     <div>
       <Header />
+      <Route path="/user">
+        <User />
+      </Route>
       <Route path="/home">
         <MainPage />
       </Route>
