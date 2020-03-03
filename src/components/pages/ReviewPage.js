@@ -5,7 +5,7 @@ import Button from "../layouts/AboutMovie";
 import Review from "../layouts/Review";
 import Footer from "../layouts/Footer";
 
-const OverviewPage = () => {
+const ReviewPage = () => {
   return (
     <div>
       <Header />
@@ -17,4 +17,4 @@ const OverviewPage = () => {
   );
 };
 
-export default OverviewPage;
+export default ReviewPage;

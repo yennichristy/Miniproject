@@ -1,6 +1,6 @@
 import React from "react";
-import Response from "../layouts/ReviewResponse";
-import Comment from "../layouts/ReviewComments";
+import Response from "./ReviewResponse";
+import Comment from "./ReviewComments";
 
 const Review = () => {
   return (
