@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import MainPage from "./components/pages/MainPage";
+import OverviewPage from "./components/pages/OverviewPage";
+import ReviewPage from "./components/pages/ReviewPage";
 
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
@@ -60,6 +62,12 @@ const App = () => {
     <div>
       <Route path="/home">
         <MainPage />
+      </Route>
+      <Route path="/overview" exact>
+        <OverviewPage />
+      </Route>
+      <Route path="/review">
+        <ReviewPage />
       </Route>
     </div>
   );
