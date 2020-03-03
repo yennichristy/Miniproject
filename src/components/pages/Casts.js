@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Picture from "../../assets/pictures/profile.jpeg";
 import "../../assets/styles/Casts.scss";
 
 const Casts = () => {
-  const [char, setChar] = React.useState([
+  const [char, setChar] = useState([
     {
       id: 1,
       name: "Kaka",

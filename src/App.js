@@ -11,6 +11,7 @@ import AboutMovie from "./components/layouts/AboutMovie";
 import Casts from "./components/pages/Casts";
 import Banner from "./components/layouts/Banner";
 import Category from "./components/layouts/CategoryButton";
+import Movies from "./components/layouts/Movies";
 
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
@@ -74,6 +75,7 @@ const App = () => {
       {/* <Review /> */}
       {/* <Casts /> */}
       <Category />
+      <Movies />
       <Route path="/user">
         <User />
       </Route>
