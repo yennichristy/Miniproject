@@ -1,17 +1,7 @@
 import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
-import User from "./components/pages/User";
-import { Route } from "react-router-dom";
-import Footer from "./components/layouts/Footer";
-import Header from "./components/layouts/Header";
-import Slider from "./components/layouts/Slider";
-import AboutMovie from "./components/layouts/AboutMovie";
-// import Overview from "./components/pages/Overview";
-// import Review from "./components/pages/Review";
-import Casts from "./components/pages/Casts";
-import Banner from "./components/layouts/Banner";
-import Category from "./components/layouts/CategoryButton";
-import Movies from "./components/layouts/Movies";
+import MainPage from "./components/pages/MainPage";
 
 // import "./App.css";
 // import { getMovies, addMovie, delMovie } from "./store/actions/movie";
@@ -68,18 +58,9 @@ import Movies from "./components/layouts/Movies";
 const App = () => {
   return (
     <div>
-      <Header />
-      {/* <Banner /> */}
-      <Slider />
-      {/* <AboutMovie /> */}
-      {/* <Review /> */}
-      {/* <Casts /> */}
-      <Category />
-      <Movies />
-      <Route path="/user">
-        <User />
+      <Route path="/home">
+        <MainPage />
       </Route>
-      <Footer />
     </div>
   );
 };
