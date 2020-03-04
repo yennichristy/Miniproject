@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../../assets/styles/Movies.scss";
-import Picture from "../../assets/pictures/profile.jpeg";
 import { connect } from "react-redux";
 import { movieList } from "../../store/actions/moviesAction";
+import { Link } from "react-router-dom";
 
 const Movies = ({ movieList, movies }) => {
   useEffect(() => {
@@ -10,10 +10,12 @@ const Movies = ({ movieList, movies }) => {
   }, [movieList]);
 
   const movieLists = movies.map(item => (
-    <div>
-      <img src={item.poster} alt={item.title}></img>
-      <p>{item.title}</p>
-    </div>
+    <Link to={`/${item._id}`}>
+      <div>
+        <img src={item.poster} alt={item.title}></img>
+        <p>{item.title}</p>
+      </div>
+    </Link>
   ));
 
   return (

@@ -1,7 +1,16 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
 import "../../assets/styles/Overview.scss";
+import { getMovieById } from "../../store/actions/moviesAction";
 
-const Overview = () => {
+const Overview = ({ movie, getMovieById }) => {
+  let { id } = useParams();
+
+  React.useEffect(() => {
+    getMovieById(id);
+  }, []);
+
   return (
     <div className="overview">
       <div className="overview__synopsis">
@@ -9,16 +18,7 @@ const Overview = () => {
           <p>Synopsis</p>
         </div>
         <div className="overview__synopsis--content">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took.
-          </p>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took.
-          </p>
+          <p>{movie.synopsis}</p>
         </div>
       </div>
       <div className="overview__movie-info">
@@ -26,18 +26,21 @@ const Overview = () => {
           <p>Movie Info</p>
         </div>
         <div div className="overview__movie-info--content">
-          <p>Release date : January 5, 1998</p>
-          <p>Director : John Doe</p>
-          <p>Featured song : Pegasus fantasi</p>
-          <p>Budget : 200 million USD</p>
-          <p>Release date : January 5, 1998</p>
+          <p>Release date: {movie.releaseDate}</p>
+          <p>Budget: {movie.budget}</p>
+          <p>Featured song : </p>
           <p>Director : James Cameron</p>
           <p>Featured song : Soldier dream</p>
-          <p>Budget : 200 million USD</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default Overview;
+const mapStateToProps = state => {
+  return {
+    movie: state.movies.movieId
+  };
+};
+
+export default connect(mapStateToProps, { getMovieById })(Overview);

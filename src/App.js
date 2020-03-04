@@ -7,13 +7,14 @@ import MainPage from "./components/pages/MainPage";
 import OverviewPage from "./components/pages/OverviewPage";
 import ReviewPage from "./components/pages/ReviewPage";
 import CastsPage from "./components/pages/CastsPage";
+import Routes from "./components/routes/Routes";
 
 const App = () => {
   return (
     <div>
       <Header />
       <MainPage />
-      <Route path="/overview" exact>
+      {/* <Route path="/overview" exact>
         <OverviewPage />
       </Route>
       <Route path="/review">
@@ -21,7 +22,8 @@ const App = () => {
       </Route>
       <Route path="/cast">
         <CastsPage />
-      </Route>
+      </Route> */}
+      <Routes />
       <Footer />
     </div>
   );

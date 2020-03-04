@@ -1,5 +1,6 @@
 const initialState = {
   movies: [],
+  movieId: {},
   error: null
 };
 
@@ -10,6 +11,11 @@ const moviesReducer = (state = initialState, action) => {
       return {
         ...state,
         movies: payload
+      };
+    case "GET_ID":
+      return {
+        ...state,
+        movieId: payload
       };
     default:
       return { ...state };
