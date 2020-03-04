@@ -1,26 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../assets/styles/Movies.scss";
 import Picture from "../../assets/pictures/profile.jpeg";
+import { connect } from "react-redux";
+import { movieList } from "../../store/actions/moviesAction";
 
-const Movies = () => {
-  const [movie, setMovie] = useState([
-    { id: 1, title: "Sun", image: { Picture } },
-    { id: 2, title: "Flower", image: { Picture } },
-    { id: 3, title: "Bright", image: { Picture } }
-  ]);
+const Movies = ({ movieList, movies }) => {
+  useEffect(() => {
+    movieList();
+  }, [movieList]);
 
-  const movieList = movie.map(item => (
+  const movieLists = movies.map(item => (
     <div>
-      <img src={item.image.Picture} alt={item.title}></img>
+      <img src={item.poster} alt={item.title}></img>
       <p>{item.title}</p>
     </div>
   ));
 
   return (
     <div className="movies">
-      <div className="movies__list">{movieList}</div>
+      <div className="movies__list">{movieLists}</div>
     </div>
   );
 };
 
-export default Movies;
+const mapStateToProps = state => {
+  return {
+    movies: state.movies.movies
+  };
+};
+
+export default connect(mapStateToProps, { movieList })(Movies);

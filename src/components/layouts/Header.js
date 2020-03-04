@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../assets/styles/Header.scss";
 import logo from "../../assets/pictures/logo.svg";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Picture } from "../../assets/pictures/profile.jpeg";
 import User from "../pages/User";
 
@@ -16,7 +16,6 @@ const Header = () => {
     console.log("nana");
   };
 
-  const dispatch = useDispatch();
   //useSelector pengganti connect
   const token = useSelector(state => state.user.token);
 
@@ -38,8 +37,14 @@ const Header = () => {
       <div className="header__user">
         <div className="header__user__btn">
           {token ? (
-            <div>
+            <div className="header__user__profile-picture">
               <img src={Picture} alt="profile"></img>
+              <div className="header__user__dropdown">
+                <p>Lala</p>
+                <button>Profile</button>
+                <button>Settings</button>
+                <button>Log Out</button>
+              </div>
             </div>
           ) : (
             <div>

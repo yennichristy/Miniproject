@@ -7,7 +7,6 @@ import MainPage from "./components/pages/MainPage";
 import OverviewPage from "./components/pages/OverviewPage";
 import ReviewPage from "./components/pages/ReviewPage";
 import CastsPage from "./components/pages/CastsPage";
-import User from "./components/pages/User";
 
 const App = () => {
   return (
