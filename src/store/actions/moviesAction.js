@@ -13,7 +13,6 @@ export const movieList = () => async dispatch => {
       }
     );
     const dataMovie = await getMovieRes.json();
-    console.log(dataMovie);
     dispatch({
       type: "GET_MOVIES",
       payload: dataMovie.data.docs
@@ -24,7 +23,6 @@ export const movieList = () => async dispatch => {
 };
 
 export const getMovieById = id => async dispatch => {
-  console.log("act", id);
   try {
     const res = await fetch(`${baseUrl}/movies/id?id=${id}`, {
       method: "GET",
@@ -34,7 +32,6 @@ export const getMovieById = id => async dispatch => {
       }
     });
     let data = await res.json();
-    console.log(data, "ok");
     dispatch({
       type: "GET_ID",
       payload: data.data

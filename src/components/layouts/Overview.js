@@ -5,6 +5,7 @@ import "../../assets/styles/Overview.scss";
 import { getMovieById } from "../../store/actions/moviesAction";
 
 const Overview = ({ movie, getMovieById }) => {
+  //untuk ambil params yang di URL
   let { id } = useParams();
 
   useEffect(() => {

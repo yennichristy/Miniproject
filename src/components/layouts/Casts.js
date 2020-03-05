@@ -1,38 +1,33 @@
-import React, { useState } from "react";
-import Picture from "../../assets/pictures/profile.jpeg";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { getMovieById } from "../../store/actions/moviesAction";
 import "../../assets/styles/Casts.scss";
 
-const Casts = () => {
-  const [char, setChar] = useState([
-    {
-      id: 1,
-      name: "Kaka",
-      image: { Picture }
-    },
-    {
-      id: 2,
-      name: "lala",
-      image: { Picture }
-    },
-    {
-      id: 2,
-      name: "lala",
-      image: { Picture }
-    }
-  ]);
+const Casts = ({ getMovieById, casts }) => {
+  let { id } = useParams();
 
-  const list = char.map(item => (
-    <div className="casts__img">
-      <img src={item.image.Picture} alt="casts"></img>
-      <p>{item.name}</p>
-    </div>
-  ));
+  useEffect(() => {
+    getMovieById(id);
+  }, []);
 
+  const lists =
+    casts &&
+    casts.map(item => (
+      <div className="casts__img">
+        <img src={item.photo} alt={item.name}></img>
+        <p>{item.name}</p>
+      </div>
+    ));
   return (
     <div className="casts">
-      <div className="casts__container">{list}</div>
+      <div className="casts__container">{lists}</div>
     </div>
   );
 };
 
-export default Casts;
+const mapStateToProps = state => {
+  return { casts: state.movies.movieId.cast };
+};
+
+export default connect(mapStateToProps, { getMovieById })(Casts);
