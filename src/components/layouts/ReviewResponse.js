@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import BeautyStars from "beauty-stars";
 import "../../assets/styles/ReviewResponse.scss";
+import { addReview } from "../../store/actions/reviewResponseAction";
 import Profile from "../../assets/pictures/profile.jpeg";
 
-const Response = () => {
+const Response = ({ addReview }) => {
   const [rating, setRating] = useState({ value: 0 });
 
   return (

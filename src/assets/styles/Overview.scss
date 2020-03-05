@@ -24,6 +24,15 @@
     &--content {
       @include content;
       border-top: 0.2vh solid rgb(187, 184, 184);
+      button {
+        background-color: rgb(233, 232, 232);
+        border: none;
+        border-radius: 1vh;
+        margin-right: 0.8vw;
+        padding: 1vh;
+        @include content;
+        font-size: 1.5vh;
+      }
     }
   }
 }

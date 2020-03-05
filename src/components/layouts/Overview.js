@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import "../../assets/styles/Overview.scss";
@@ -7,7 +7,7 @@ import { getMovieById } from "../../store/actions/moviesAction";
 const Overview = ({ movie, getMovieById }) => {
   let { id } = useParams();
 
-  React.useEffect(() => {
+  useEffect(() => {
     getMovieById(id);
   }, []);
 
@@ -28,9 +28,14 @@ const Overview = ({ movie, getMovieById }) => {
         <div div className="overview__movie-info--content">
           <p>Release date: {movie.releaseDate}</p>
           <p>Budget: {movie.budget}</p>
-          <p>Featured song : </p>
-          <p>Director : James Cameron</p>
-          <p>Featured song : Soldier dream</p>
+          <p>Producer: {movie.producer} </p>
+          <p>Writer: {movie.writer}</p>
+          <p>Director: {movie.director}</p>
+          <p>
+            Casts:{" "}
+            {movie.cast && movie.cast.map(item => <span>{item.name}</span>)}
+          </p>
+          {movie.tags && movie.tags.map(item => <button>{item}</button>)}
         </div>
       </div>
     </div>

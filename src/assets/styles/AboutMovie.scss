@@ -8,12 +8,21 @@
     grid-column: 2/9;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    button {
+    .button--active {
+      @include button;
+      background-color: rgb(233, 232, 232);
+      color: rgb(158, 157, 157);
+      margin-right: 1vw;
+      &:hover {
+        background-color: #e77f9e;
+      }
+    }
+    .button--inactive {
       @include button;
       margin-right: 1vw;
-    }
-    button:hover {
-      background-color: #e77f9e;
+      &:hover {
+        background-color: #e77f9e;
+      }
     }
   }
 }
