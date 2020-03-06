@@ -2,5 +2,15 @@
   &__content {
     color: black;
     font-size: 1.8vh;
+    position: absolute;
+    background-color: white;
+    z-index: 20;
+    p {
+      padding-right: 2vw;
+      padding-left: 2vw;
+    }
+    p:hover {
+      color: #fe024e;
+    }
   }
 }

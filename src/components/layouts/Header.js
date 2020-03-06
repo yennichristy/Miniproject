@@ -4,7 +4,6 @@ import logo from "../../assets/pictures/logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { profile } from "../../store/actions/useraction";
 import User from "../pages/User";
-import MainPage from "../pages/MainPage";
 import ProfileMenu from "../../components/layouts/ProfileMenu";
 
 const Header = () => {
