@@ -16,6 +16,17 @@ const userReducer = (state = initialState, action) => {
       };
     case "FAILED":
       return { ...state, error: payload.error };
+    case "GET_PROFILE":
+      return {
+        ...state,
+        user: payload
+      };
+    case "SIGN_OUT":
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        token: null
+      };
     default:
       return { ...state };
   }

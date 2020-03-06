@@ -1,6 +1,7 @@
 const baseUrl = "https://reviewmoviedatabase.herokuapp.com/api/v1";
 
-export const addReview = data => async dispatch => {
+export const addReview = dataReview => async dispatch => {
+  console.log(dataReview);
   const token = localStorage.getItem("token");
   try {
     const res = await fetch(`${baseUrl}/reviews`, {
@@ -10,9 +11,10 @@ export const addReview = data => async dispatch => {
         Authorization: `Bearer ${token}`,
         Accept: "application/json"
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(dataReview)
     });
     const resData = await res.json();
+    console.log("lala", resData);
     dispatch({
       type: "ADD_REVIEW",
       payload: resData

@@ -67,7 +67,7 @@ const User = props => {
               <h6>Password:</h6>
               <input
                 className="user-content__input"
-                type="text"
+                type="password"
                 name="password"
                 onChange={change}
               ></input>
@@ -117,7 +117,7 @@ const User = props => {
               <h6>Password:</h6>
               <input
                 className="user-content__input"
-                type="text"
+                type="password"
                 name="password"
                 value={userData.password}
                 placeholder="Your passwrod here"
@@ -126,7 +126,7 @@ const User = props => {
               <h6>Password Confirmation:</h6>
               <input
                 className="user-content__input"
-                type="text"
+                type="password"
                 name="confirm"
                 value={userData.confirm}
                 placeholder="password confirmation"

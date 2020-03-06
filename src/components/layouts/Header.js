@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "../../assets/styles/Header.scss";
 import logo from "../../assets/pictures/logo.svg";
-import { useSelector } from "react-redux";
-import { Picture } from "../../assets/pictures/profile.jpeg";
+import { useSelector, useDispatch } from "react-redux";
+import { profile } from "../../store/actions/useraction";
 import User from "../pages/User";
+import MainPage from "../pages/MainPage";
+import ProfileMenu from "../../components/layouts/ProfileMenu";
 
 const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [profileOpen, setProfile] = useState(false);
+
   const openModal = () => {
     setModalOpen(true);
   };
@@ -16,15 +20,26 @@ const Header = () => {
     console.log("nana");
   };
 
+  const openProfile = () => {
+    setProfile(!profileOpen);
+  };
+
+  const dispatch = useDispatch();
+
   //useSelector pengganti connect
   const token = useSelector(state => state.user.token);
+  const user = useSelector(state => state.user.user);
+
+  React.useEffect(() => {
+    dispatch(profile());
+  }, []);
 
   return (
     <div className="header">
       <div className="header__brand">
         <div className="header__brand__container">
           <img src={logo} alt="logo" />
-          <h4>MilanTV</h4>
+          <h4>CinemaTV</h4>
         </div>
       </div>
       <div className="header__search">
@@ -37,14 +52,13 @@ const Header = () => {
       <div className="header__user">
         <div className="header__user__btn">
           {token ? (
-            <div className="header__user__profile-picture">
-              <img src={Picture} alt="profile"></img>
-              <div className="header__user__dropdown">
-                <p>Lala</p>
-                <button>Profile</button>
-                <button>Settings</button>
-                <button>Log Out</button>
-              </div>
+            <div className="header__user">
+              <img
+                src={user && user.image}
+                alt={user && user.name}
+                onClick={openProfile}
+              />
+              <ProfileMenu open={profileOpen} />
             </div>
           ) : (
             <div>

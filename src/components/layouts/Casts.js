@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getMovieById } from "../../store/actions/moviesAction";
 import "../../assets/styles/Casts.scss";
 

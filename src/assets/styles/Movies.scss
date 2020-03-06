@@ -6,8 +6,9 @@
   &__list {
     grid-column: 2/12;
     display: flex;
+    flex-wrap: wrap;
     img {
-      max-width: 10vw;
+      max-width: 9vw;
       max-height: 28vh;
       margin-right: 1.2vw;
     }
@@ -16,9 +17,9 @@
       display: flex;
       margin-top: 1vh;
       margin-bottom: 2vh;
-      margin-left: -4vh;
       justify-content: center;
       font-weight: 600;
+      max-width: 10vw;
     }
   }
 }

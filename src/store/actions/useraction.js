@@ -12,10 +12,10 @@ export const signUp = data => async dispatch => {
     });
     const resData = await res.json();
     console.log(resData);
-    localStorage.setItem("token", resData.data.token);
+    localStorage.setItem("token", resData.data);
     dispatch({
       type: "SUCCESS",
-      payload: resData
+      payload: resData.data
     });
     alert("Sign Up Success");
   } catch (error) {
@@ -43,7 +43,7 @@ export const signIn = data => async dispatch => {
     localStorage.setItem("token", resData.data);
     dispatch({
       type: "SUCCESS",
-      payload: resData
+      payload: resData.data
     });
   } catch (error) {
     localStorage.removeItem("token");
@@ -53,4 +53,32 @@ export const signIn = data => async dispatch => {
     });
     console.log(error);
   }
+};
+
+export const profile = () => async dispatch => {
+  const token = localStorage.getItem("token");
+  try {
+    const res = await fetch(`${baseUrl}/users/currentUser`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json"
+      }
+    });
+    const data = await res.json();
+    console.log(data);
+    dispatch({
+      type: "GET_PROFILE",
+      payload: data.data
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const signOut = () => {
+  return {
+    type: "SIGN_OUT"
+  };
 };

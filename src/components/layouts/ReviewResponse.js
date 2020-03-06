@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import BeautyStars from "beauty-stars";
+import { useParams } from "react-router-dom";
 import "../../assets/styles/ReviewResponse.scss";
 import { addReview } from "../../store/actions/reviewResponseAction";
+import { getReview } from "../../store/actions/reviewCommentAction";
 import Profile from "../../assets/pictures/profile.jpeg";
 
-const Response = ({ addReview }) => {
+const Response = ({ addReview, getReview, reviews }) => {
+  const [textReview, setTextReview] = useState("");
+
+  useEffect(() => {
+    getReview(id);
+  }, []);
+
+  const changeReview = e => {
+    setTextReview(e.target.value);
+  };
   const [rating, setRating] = useState({ value: 0 });
+
+  const { id } = useParams();
+
+  const review = () => {
+    const data = {
+      rating: rating.value,
+      review: textReview,
+      movieId: id
+    };
+    addReview(data);
+    getReview();
+  };
 
   return (
     <div className="response">
@@ -13,7 +37,7 @@ const Response = ({ addReview }) => {
         <img src={Profile} alt="profile" width="80vw" height="80vh"></img>
       </div>
       <div className="response__ratings">
-        <p>Yenni K.P</p>
+        <p>Yenni</p>
         <div className="response__ratings__stars">
           <BeautyStars
             value={rating.value}
@@ -23,11 +47,22 @@ const Response = ({ addReview }) => {
         </div>
       </div>
       <div className="response__input">
-        <textarea type="text" placeholder="Your review here"></textarea>
-        <button>Submit</button>
+        <textarea
+          type="text"
+          placeholder="Your review here"
+          value={textReview}
+          onChange={changeReview}
+        ></textarea>
+        <button onClick={review}>Submit</button>
       </div>
     </div>
   );
 };
 
-export default Response;
+const mapStateToProps = state => {
+  return {
+    reviews: state.comment.comment
+  };
+};
+
+export default connect(mapStateToProps, { addReview, getReview })(Response);

@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footer__brand">
           <div className="footer__brand__logo">
             <img src={logo} alt="logo" width="20%" height="20%"></img>
-            <h4>MilanTV</h4>
+            <h4>CinemaTV</h4>
           </div>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
