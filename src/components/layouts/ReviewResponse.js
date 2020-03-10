@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 import BeautyStars from "beauty-stars";
 import { useParams } from "react-router-dom";
 import "../../assets/styles/ReviewResponse.scss";
-import { addReview } from "../../store/actions/reviewResponseAction";
-import { getReview } from "../../store/actions/reviewCommentAction";
+import { getReview, addReview } from "../../store/actions/reviewCommentAction";
 import Profile from "../../assets/pictures/profile.jpeg";
 
-const Response = ({ addReview, getReview, reviews }) => {
+const Response = ({ getReview, addReview, reviews }) => {
   const [textReview, setTextReview] = useState("");
 
   useEffect(() => {
@@ -28,7 +27,6 @@ const Response = ({ addReview, getReview, reviews }) => {
       movieId: id
     };
     addReview(data);
-    getReview();
   };
 
   return (
@@ -65,4 +63,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { addReview, getReview })(Response);
+export default connect(mapStateToProps, { getReview, addReview })(Response);
