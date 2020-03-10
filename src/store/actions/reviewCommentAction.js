@@ -15,7 +15,7 @@ export const getReview = id => async dispatch => {
     console.log("lolo", data);
     dispatch({
       type: "GET_REVIEW",
-      payload: data.data
+      payload: data.data.allDataReview
     });
   } catch (error) {
     console.log(error);
@@ -35,7 +35,7 @@ export const getBefore = id => async dispatch => {
     console.log("bef", data);
     dispatch({
       type: "GET_BEFORE",
-      payload: data.data
+      payload: data.data.allDataReview
     });
   } catch (error) {
     console.log(error);

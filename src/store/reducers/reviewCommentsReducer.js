@@ -10,6 +10,11 @@ const commentReducer = (state = initialState, action) => {
         ...state,
         comment: payload
       };
+    case "ADD_REVIEW":
+      return {
+        ...state,
+        comment: [payload, ...state.comment]
+      };
     case "GET_BEFORE":
       return {
         ...state,

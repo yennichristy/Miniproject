@@ -14,14 +14,15 @@ const Comment = ({ getReview, getBefore, reviews }) => {
       getBefore(id);
     }
   }, []);
-  console.log("papapa");
+  console.log("papt", reviews);
 
-  return (
-    <React.Fragment>
+  const lists =
+    reviews &&
+    reviews.map(item => (
       <div className="comment">
         <div className="comment__img">
           <img
-            src={reviews.userId && reviews.userId.image}
+            src={item.userId && item.userId.image}
             alt="profile"
             width="80vw"
             height="80vh"
@@ -29,13 +30,18 @@ const Comment = ({ getReview, getBefore, reviews }) => {
         </div>
         <div className="comment__text">
           <p className="comment__text--bold">
-            {reviews.userId && reviews.userId.name}
+            {item.userId && item.userId.name}
           </p>
-          <p>{reviews && reviews.review}</p>
+          <p>{item.review}</p>
         </div>
-        <div className="comment__loadmore">
-          <button>More Review</button>
-        </div>
+      </div>
+    ));
+
+  return (
+    <React.Fragment>
+      {lists}
+      <div className="comment__loadmore">
+        <button>More Review</button>
       </div>
     </React.Fragment>
   );

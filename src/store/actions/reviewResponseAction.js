@@ -1,3 +1,5 @@
+import { getReview } from "../actions/reviewCommentAction";
+
 const baseUrl = "https://reviewmoviedatabase.herokuapp.com/api/v1";
 
 export const addReview = dataReview => async dispatch => {
@@ -13,12 +15,8 @@ export const addReview = dataReview => async dispatch => {
       },
       body: JSON.stringify(dataReview)
     });
-    const resData = await res.json();
-    console.log("lala", resData);
-    dispatch({
-      type: "ADD_REVIEW",
-      payload: resData
-    });
+    await res.json();
+    // await getReview();
   } catch (error) {
     dispatch({
       type: "FAILED_REVIEW",
