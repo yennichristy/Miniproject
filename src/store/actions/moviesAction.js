@@ -3,7 +3,7 @@ const baseUrl = "https://reviewmoviedatabase.herokuapp.com/api/v1";
 export const movieList = () => async dispatch => {
   try {
     const getMovieRes = await fetch(
-      `${baseUrl}/movies/searchall?limit=25&page=1`,
+      `${baseUrl}/movies/searchall?limit=50&page=1`,
       {
         method: "GET",
         headers: {
