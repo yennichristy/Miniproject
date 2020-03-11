@@ -25,7 +25,9 @@
     }
   }
   &__loadmore {
-    grid-column: 6/8;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
     button {
       @include submit;
       width: 7vw;
