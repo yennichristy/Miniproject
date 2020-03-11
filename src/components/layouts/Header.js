@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../assets/styles/Header.scss";
 import logo from "../../assets/pictures/logo.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { profile } from "../../store/actions/useraction";
 import User from "../pages/User";
 import ProfileMenu from "../../components/layouts/ProfileMenu";
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,11 +17,16 @@ const Header = () => {
 
   const closeModal = () => {
     setModalOpen(false);
-    console.log("nana");
   };
 
   const openProfile = () => {
     setProfile(!profileOpen);
+  };
+
+  const history = useHistory();
+
+  const home = () => {
+    history.push("/");
   };
 
   const dispatch = useDispatch();
@@ -29,14 +35,14 @@ const Header = () => {
   const token = useSelector(state => state.user.token);
   const user = useSelector(state => state.user.user);
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(profile());
   }, []);
 
   return (
     <div className="header">
       <div className="header__brand">
-        <div className="header__brand__container">
+        <div className="header__brand__container" onClick={home}>
           <img src={logo} alt="logo" />
           <h4>CinemaTV</h4>
         </div>
